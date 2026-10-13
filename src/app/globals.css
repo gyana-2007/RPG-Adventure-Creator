@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 240, 246, 252;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background-color: #0a0e17;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Custom RPG Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b0f17;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Atmospheric Ambient Aurora Keyframes */
+@keyframes auroraSlow {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  33% {
+    transform: translate3d(50px, 35px, 0) scale(1.08);
+  }
+  66% {
+    transform: translate3d(-35px, 60px, 0) scale(0.94);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes auroraReverse {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  33% {
+    transform: translate3d(-45px, -40px, 0) scale(1.06);
+  }
+  66% {
+    transform: translate3d(40px, -25px, 0) scale(0.93);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes auroraPulse {
+  0%, 100% {
+    transform: scale(1) translate3d(0, 0, 0);
+    opacity: 0.12;
+  }
+  50% {
+    transform: scale(1.15) translate3d(25px, -15px, 0);
+    opacity: 0.22;
+  }
+}
+
+.animate-aurora-slow {
+  animation: auroraSlow 28s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-aurora-reverse {
+  animation: auroraReverse 34s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-aurora-pulse {
+  animation: auroraPulse 22s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+/* Parchment writing style */
+.parchment-mode {
+  background: #fbf7ee;
+  color: #1f1b16;
+  font-family: Georgia, 'Times New Roman', serif;
+  box-shadow: inset 0 0 20px rgba(139, 90, 43, 0.15);
+}
